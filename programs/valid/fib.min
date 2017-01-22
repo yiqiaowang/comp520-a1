@@ -1,0 +1,22 @@
+// Prints the first n fibonacci numbers starting from 0 1 1 2 3 5 ... 
+var n: int;
+var counter: int;
+var a: int;
+var b: int;
+var temp: int;
+
+read n;
+counter = 0;
+a = 0;
+b = 1;
+temp = 0;
+
+print "Printing the first " + n + " fibonacci numbers";
+
+
+while n do
+	print (a + b);
+	var temp = a + b;
+	var a = b;
+	var b = temp;
+	var n = n - 1;
