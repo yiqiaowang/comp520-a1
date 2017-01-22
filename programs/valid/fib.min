@@ -16,7 +16,8 @@ print "Printing the first " + n + " fibonacci numbers";
 
 while n do
 	print (a + b);
-	var temp = a + b;
-	var a = b;
-	var b = temp;
-	var n = n - 1;
+	temp = a + b;
+	a = b;
+	b = temp;
+	n = n - 1;
+done

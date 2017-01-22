@@ -5,4 +5,4 @@
 # You *MUST* replace the following commands with the
 # commands for building your compiler.
 
-stack build
+(cd src && stack install --local-bin-path .)

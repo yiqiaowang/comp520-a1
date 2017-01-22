@@ -2,10 +2,10 @@ var name: string;
 var direction: string;
 
 print "Hello, welcome to Narnia!";
-print "What is your name?"
+print "What is your name?";
 read name;
-print "Okay " + name + ". Which direction do you want to go? (N/E/S/W)"
+print "Okay " + name + ". Which direction do you want to go? (N/E/S/W)";
 read direction;
-print "You have died! " + direction + " was a horrible decision."
-print "Better luck next time!"
+print "You have died! " + direction + " was a horrible decision.";
+print "Better luck next time!";
 
