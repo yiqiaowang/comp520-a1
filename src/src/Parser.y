@@ -3,7 +3,7 @@ module Parser (parseInput) where
 import Token (Token (..))
 }
 
-%partial parseInput
+%name parseInput
 %tokentype { Token }
 %error { parseError }
 

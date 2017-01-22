@@ -1,20 +1,2 @@
 read x;
-var x:
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-float;
+var x: float;
