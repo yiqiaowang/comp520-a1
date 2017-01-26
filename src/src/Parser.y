@@ -13,7 +13,6 @@ import Token (Token (..))
     int { TINT }
     float { TFLOAT }
     string  { TSTRING }
-
     var    { TVAR }
     while  { TWHILE }
     do { TDO }
@@ -49,17 +48,17 @@ import Token (Token (..))
 
 Program : Declarations Statements {$1 && $2}
 
-Declarations : {- empty -} {True}
-	    | Declaration Declarations {$1 && $2}
+Declarations : Declaration Declarations {$1 && $2}
+      | {- empty -} {True}
 
-Statements : {- empty -} {True}
-	   | Statement Statements {$1 && $2}
+Statements : Statement Statements {$1 && $2}
+      | {- empty -} {True}
 
 VariableType : int { True }
      	     | float { True }
        	     | string { True }
 
-Declaration : var id_val ':' VariableType ';' { $4 } 
+Declaration : var id_val ':' VariableType ';' { $4 }
 
 Statement : read id_val ';' { True }
 	  | print Expression ';' { $2 }
