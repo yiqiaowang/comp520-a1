@@ -60,8 +60,7 @@ $whitespace =[\ \t\r]
 
 @escape = (a|b|f|n|r|t|v|@back_slash|'|@d_quote)
 
--- String "(\@escape|[^"])*"
-@string_val = @d_quote(@back_slash@escape|[~"])*@d_quote
+@string_val = @d_quote([^"\\]|\\@escape)*@d_quote
 
 
 -- Comment  \\\\[^\n]*
@@ -102,15 +101,13 @@ tokens :-
 @colon {\s -> T_COLON}
 
 -- Every token after this one holds some value
--- Perhaps use readMaybe? After you figure out what that means...
--- Reading strings is broke, Maybe not
 @id_val     {\s -> T_ID_VAL s}
 @int_val {\s -> T_INT_VAL (read s)}
-@float_val  {\s -> T_FLOAT_VAL (read s)} 
-@string_val {\s -> T_STRING_VAL s} 
+@float_val  {\s -> T_FLOAT_VAL (read s)}
+@string_val {\s -> T_STRING_VAL s}
 
 
--- Whitespace, newlines, comments 
+-- Whitespace, newlines, comments
 $whitespace+ ;
 @new_line ;
 @comment_val ;
